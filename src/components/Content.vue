@@ -1,11 +1,9 @@
 <template>
   <article>
-    <section>
-      <h3>UI Animations with Swift</h3>
+    <section v-for="section in sections" :key="section.title">
+      <h3>{{ section.title }}</h3>
       <div class="description">
-        <p>I’ve been interviewing for iOS roles lately, and in most cases, what I’ve been asked to do is: work on a small iOS app that I have to return in a week so that they can review it and hopefully give me feedback. I like this process because you can really show off your skill set, and they can get a true understanding of your coding style and problem solving (depending on what they ask you to build).</p>
-        <p>The last one I worked on was for an application that has developed a solid and heavily animated UI, so one of the requirements in the iOS take-home was to include animations. This was a good opportunity for me to dig more into animations, and I spent some time playing around in our Playground.</p>
-        <p>Playgrounds are really cool! It’s a coding environment that allows a user to interact with Swift code, without requiring the user to create a project. That makes it a truly powerful tool to learn swift and for testing some code or prototyping views.</p>
+        <p v-for="paragraph in section.description" :key="paragraph" >{{ paragraph }}</p>
       </div>
     </section>
   </article>
@@ -14,9 +12,10 @@
 <script>
 export default {
   name: 'Content',
+  props: { sections: Array },
   data () {
     return {
-      msg: 'Розумні контракти'
+      diploma: 'Інформаційна система керування ризиками на основі розумних контрактів'
     }
   }
 }

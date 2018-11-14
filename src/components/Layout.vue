@@ -2,13 +2,13 @@
   <div class="container">
     <header>
       <h1>
-        <span class="title">Smart Contracts</span>
-        <span class="author">Author</span>
+        <span class="title">{{ topic }}</span>
+        <span class="author">Автор: {{ author }}</span>
       </h1>
       <header-menu />
     </header>
     <main>
-      <main-content />
+      <main-content :sections="sections" />
     </main>
   </div>
 </template>
@@ -19,13 +19,15 @@ import Content from './Content.vue'
 
 export default {
   name: 'Header',
+  props: { sections: Array },
   components: {
     'header-menu': Menu,
     'main-content': Content
   },
   data () {
     return {
-      msg: 'Розумні контракти'
+      author: 'Кулинич Юрій',
+      topic: 'Магістерська робота'
     }
   }
 }
@@ -54,6 +56,7 @@ export default {
     max-width: 700px;
     padding: 0 20px;
     margin-top: 50px;
+    padding-bottom: 100px;
   }
 }
 </style>

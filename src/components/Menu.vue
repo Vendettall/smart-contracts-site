@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <li>Home</li>
+    <li>Головна</li>
   </nav>
 </template>
 
