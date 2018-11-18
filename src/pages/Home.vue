@@ -4,7 +4,7 @@
 
 <script>
 import Layout from '@/components/Layout.vue'
-import sections from '@/assets/home.json'
+import sections from '@/assets/texts/home.json'
 
 export default {
   name: 'Header',

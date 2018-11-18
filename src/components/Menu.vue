@@ -1,17 +1,13 @@
 <template>
   <nav>
-    <li>Головна</li>
+    <li><router-link to="/">Головна</router-link></li>
+    <li><router-link to="/dapp">Прототип</router-link></li>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'Header',
-  data () {
-    return {
-      msg: 'Розумні контракти'
-    }
-  }
+  name: 'Header'
 }
 </script>
 
@@ -30,19 +26,23 @@ export default {
     font-style: normal;
     li {
       margin-left: 24px;
-      transform: translateY(1.8px);
-      letter-spacing: .05em;
-      text-transform: uppercase;
-      transition: color .3s ease;
-      cursor: pointer;
-      &:hover {
-        color: rgba(0,0,0,.84);
-      }
       &:first-child {
         margin-left: 0;
       }
-      .active {
-        color: rgba(0,0,0,.84);
+      a {
+        transform: translateY(1.8px);
+        letter-spacing: .05em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: rgba(0,0,0,.54);
+        transition: color .3s ease;
+        cursor: pointer;
+        &:hover {
+          color: rgba(0,0,0,.84);
+        }
+        &.router-link-exact-active {
+          color: rgba(0,0,0,.84);
+        }
       }
     }
   }

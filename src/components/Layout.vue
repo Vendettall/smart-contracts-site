@@ -8,7 +8,7 @@
       <header-menu />
     </header>
     <main>
-      <main-content :sections="sections" />
+      <main-content :sections="sections" :images="images" />
     </main>
   </div>
 </template>
@@ -19,7 +19,13 @@ import Content from './Content.vue'
 
 export default {
   name: 'Header',
-  props: { sections: Array },
+  props: {
+    sections: Array,
+    images: {
+      type: Object,
+      required: false
+    }
+  },
   components: {
     'header-menu': Menu,
     'main-content': Content
@@ -45,7 +51,7 @@ export default {
     h1 {
       display: flex;
       justify-content: space-between;
-      padding: 15px 0;
+      padding: 30px 0;
       font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 22px;
       font-weight: 900;
