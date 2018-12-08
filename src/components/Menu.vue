@@ -1,7 +1,8 @@
 <template>
   <nav>
-    <li><router-link to="/">Головна</router-link></li>
-    <li><router-link to="/dapp">Прототип</router-link></li>
+    <li><router-link to="/">Тези роботи</router-link></li>
+    <li><router-link to="/dapps">Децентралізовані додатки</router-link></li>
+    <li><router-link to="/my-dapp">Прототип додатку</router-link></li>
   </nav>
 </template>
 
